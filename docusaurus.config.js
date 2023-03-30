@@ -1,6 +1,9 @@
 const path = require('path')
 const beian = '闽ICP备2020017848号-2'
 
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 const announcementBarContent = `<a href="/typescript-full-stack-technology-trpc" target="_blank">Typescript 全栈最值得学习的技术栈 TRPC</a>`
 
 /** @type {import('@docusaurus/types').Config} */
@@ -269,6 +272,8 @@ const config = {
         docs: {
           path: 'docs',
           sidebarPath: 'sidebars.js',
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
         },
         blog: false,
         theme: {
@@ -313,6 +318,8 @@ const config = {
           title: '愧怍',
           copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
         },
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
       },
     ],
     [
@@ -350,7 +357,15 @@ const config = {
       },
     ],
   ],
-  stylesheets: [],
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    },
+  ],
   i18n: {
     defaultLocale: 'zh-CN',
     locales: ['en', 'zh-CN'],

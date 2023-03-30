@@ -1,5 +1,6 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
+  math: ['math/demo'],
   skill: [
     'skill/introduction',
     {
@@ -329,7 +330,7 @@ const sidebars = {
     'tools/idea-config',
     'tools/vite-plugin',
     'tools/jetbrains-product-activation-method',
-  ]
+  ],
 }
 
 module.exports = sidebars
